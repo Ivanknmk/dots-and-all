@@ -1,0 +1,71 @@
+
+./Setup.hs,15
+main main1,2
+
+./app/Main.hs,90
+module Main Main0,1
+main main4,5
+main main5,6
+--main --main6,7
+x x8,9
+f f9,10
+
+./app/.stack-work/intero/intero33350Q9t-STAGING.hs,52
+module Main Main0,1
+main main4,5
+main main5,6
+
+./app/.stack-work/intero/intero33350C0Q-TEMP.hs,52
+module Main Main0,1
+main main4,5
+main main5,6
+
+./test/Spec.hs,30
+main main0,1
+main main1,2
+
+./src/Sing.hs,137
+module Sing Sing0,1
+fstString fstString2,3
+fstString fstString3,4
+sndString sndString5,6
+sndString sndString6,7
+sing sing8,9
+
+./src/Poli.hs,255
+module Poli Poli1,2
+example example3,4
+a a5,6
+b b6,7
+c c7,8
+d d8,9
+e e9,10
+f f10,11
+x x12,13
+y y13,14
+w w14,15
+z z15,16
+i i16,17
+fH fH18,19
+fH fH19,20
+hS hS21,22
+hS hS22,23
+r r24,25
+r r25,26
+co co28,29
+co co29,30
+
+./src/Lib.hs,65
+module LibLib0,1
+someFunc someFunc4,5
+someFunc someFunc5,6
+
+./src/Monoidal.hs,183
+module MonoidalParse MonoidalParse0,1
+data B B2,3
+data B = B B2,3
+instance instance12,13
+parse parse18,19
+balanced balanced22,23
+dogYrs dogYrs24,25
+dogYrs dogYrs25,26

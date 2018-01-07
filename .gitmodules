@@ -1,0 +1,6 @@
+[submodule "iterm-themes/iterm"]
+	path = iterm-themes/iterm
+	url = https://github.com/dracula/iterm.git
+[submodule ".vim_runtime"]
+	path = .vim_runtime
+	url = https://github.com/Ivanknmk/vimrc.git

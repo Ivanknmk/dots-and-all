@@ -1,0 +1,6 @@
+
+sayHello :: String -> IO ()
+sayHello x = putStrln ("Hello, " ++ x ++ "!")
+
+add :: Int -> Int -> Int
+add x y = x+y
