@@ -4,3 +4,12 @@
 # General
 log/
 *.log
+
+# Emacs
+.local~
+*~
+\#*\#
+*.elc
+auto-save-list
+tramp
+.\#*
