@@ -56,3 +56,7 @@
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 (add-hook 'after-init-hook (lambda () (load-theme 'dracula)))
+
+;; elm
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-elm))
