@@ -1,9 +1,48 @@
 # Mac
 .DS_Store
+.CFUserTextEncoding
+.Xauthority
+.bash_history
+.bash_sessions/
+Applications
+Library
+Movies
+Music
+Pictures
+Public
+Desktop
+Downloads
 
 # General
 log/
 *.log
+.localized
+.cache
+.local
+*.zcompdump*
+
+# VIM
+.viminfo
+.vim_mru_files
+
+# Haskell and Cabal
+.cabal
+.ghc-mod
+.ghc
+.hoogle
+.stack
+
+# ZSH
+.zsh-update
+.zsh_history
+
+#Rust
+.cargo
+.multirust
+.rustup
+
+# SSH
+.ssh
 
 # Emacs
 .local~

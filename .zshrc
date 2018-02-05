@@ -11,6 +11,8 @@ export CABAL=$HOME/Library/Haskell
 export PATH=$PATH:$CABAL/bin
 export LOCALBIN=$HOME/.local
 export PATH=$LOCALBIN/bin:$PATH
+export RUST=$HOME/.cargo
+export PATH=$RUST/bin:$PATH
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.

@@ -4,9 +4,19 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-auto-complete nil)
+ '(company-auto-complete-chars (quote (32 95 40 41 46 34)))
+ '(company-etags-everywhere t)
+ '(company-frontends
+   (quote
+    (company-pseudo-tooltip-unless-just-one-frontend company-echo-metadata-frontend company-preview-if-just-one-frontend)))
+ '(company-idle-delay 0)
+ '(company-minimum-prefix-length 3)
+ '(company-tooltip-idle-delay 0)
  '(custom-safe-themes
    (quote
     ("ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" default)))
+ '(global-company-mode t)
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t)
  '(haskell-process-suggest-remove-import-lines t)
@@ -18,7 +28,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (evil dracula-theme intero ghc-imported-from ghc haskell-mode))))
+    (idris-mode evil dracula-theme intero ghc-imported-from ghc haskell-mode))))
 (eval-after-load 'haskell-mode '(progn
   (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
   (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
