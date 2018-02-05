@@ -28,7 +28,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (idris-mode evil dracula-theme intero ghc-imported-from ghc haskell-mode))))
+    (elm-mode idris-mode evil dracula-theme intero ghc-imported-from ghc haskell-mode))))
 (eval-after-load 'haskell-mode '(progn
   (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
   (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
