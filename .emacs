@@ -28,7 +28,7 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (elm-mode idris-mode evil dracula-theme intero ghc-imported-from ghc haskell-mode))))
+    (key-chord evil-visual-mark-mode elm-mode idris-mode evil dracula-theme intero ghc-imported-from ghc haskell-mode))))
 (eval-after-load 'haskell-mode '(progn
   (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
   (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
@@ -56,7 +56,8 @@
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 (add-hook 'after-init-hook (lambda () (load-theme 'dracula)))
-
-;; elm
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-elm))
+(with-eval-after-load 'company
+  (add-to-list 'company-backends 'company-elm))
+(require 'key-chord)
+(key-chord-mode 1)
+(key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
