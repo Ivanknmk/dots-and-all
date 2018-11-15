@@ -4,6 +4,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode t)
  '(company-auto-complete nil)
  '(company-auto-complete-chars (quote (32 95 40 41 46 34)))
  '(company-etags-everywhere t)
@@ -15,7 +16,7 @@
  '(company-tooltip-idle-delay 0)
  '(custom-safe-themes
    (quote
-    ("ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" default)))
+    ("aaffceb9b0f539b6ad6becb8e96a04f2140c8faa1de8039a343a4f1e009174fb" "eecacf3fb8efc90e6f7478f6143fd168342bbfa261654a754c7d47761cec07c8" "ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" default)))
  '(global-company-mode t)
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t)
@@ -28,7 +29,8 @@
      ("melpa" . "http://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (key-chord evil-visual-mark-mode elm-mode idris-mode evil dracula-theme intero ghc-imported-from ghc haskell-mode))))
+    (helm projectile company-ghci markdown-mode rope-read-mode anaconda-mode jedi elpy key-chord evil-visual-mark-mode elm-mode idris-mode evil dracula-theme intero ghc-imported-from ghc haskell-mode)))
+ '(show-paren-mode t))
 (eval-after-load 'haskell-mode '(progn
   (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
   (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
@@ -55,9 +57,17 @@
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
+(global-set-key (kbd "M-x") #'helm-M-x)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
+(helm-mode 1)
+(setq make-backup-files nil) ; stop creating backup~ files
+(setq auto-save-default nil) ; stop creating #autosave# files
+(setq create-lockfiles nil) ; stop creating lock files
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-p") 'projectile-command-map)
+(global-set-key "\C-x\C-b" 'buffer-menu)
 (add-hook 'after-init-hook (lambda () (load-theme 'dracula)))
 (with-eval-after-load 'company
   (add-to-list 'company-backends 'company-elm))
 (require 'key-chord)
 (key-chord-mode 1)
-(key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
