@@ -1,0 +1,58 @@
+# Now ready to setup the panes I'll use
+                                 
+# I want a 10 lines pane at the bottom ( vertical split )
+tmux split-window -t demosession:0.0 -v -l 10
+# And I split that pane (pane number 1 on window 0) to a 10 columns one on the right
+tmux split-window -t demosession:0.1 -h -l 30
+ 
+# we can check the pane numbers
+tmux display-panes
+ 
+# now running in pane 1
+tmux select-pane -t demosession:0.1
+ 
+# show the date
+tmux send-keys "date"
+# enter 'enter'
+tmux send-keys C-M
+ 
+# well, there is another way...
+tmux clock-mode -t .2
+ 
+# now running in pane 0
+tmux select-pane -t demosession:0.0
+ 
+# now running a few commands in order to show copy/paste
+tmux send-keys 'sqlplus sys/manager@192.168.78.216/DB1 as sysdba'
+tmux send-keys C-M
+tmux send-keys 'create table DEMO (ts timestamp); '
+tmux send-keys C-M
+tmux send-keys 'insert into DEMO select current_timestamp ts from dual; '
+tmux send-keys C-M
+tmux send-keys 'commit; '
+tmux send-keys C-M
+tmux send-keys 'select current_scn from v$database; '
+tmux send-keys C-M
+tmux send-keys 'insert into DEMO select current_timestamp ts from dual; '
+tmux send-keys C-M
+tmux send-keys 'select * from DEMO; '
+tmux send-keys C-M
+tmux send-keys 'select * from DEMO as of scn '
+# here I need to copy/paste the SCN. I enter copy mode
+tmux copy-mode
+# and search for 'CURRENT_SCN'and down 2 lines ( I'm in vi mode + space to select)
+tmux send-key ? "CURRENT_SCN" c-M j j " " $
+# 'enter' to copy
+tmux send-key c-M
+# then paste
+tmux paste-buffer
+# finish the statement
+tmux send-key "; " c-M
+ 
+# clean all
+tmux send-keys 'drop table DEMO; '
+tmux send-keys C-M
+tmux send-keys '#exit '
+tmux send-keys C-M
+ 
+tmux kill-session -t demosession
